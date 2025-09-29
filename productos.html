@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Compra Hi-Fi - Equipo Recomendado</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Estilos consistentes con index.html */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: #0a0a0a;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            filter: blur(120px);
+        }
+
+        .blob1 {
+            width: 50vw;
+            height: 50vw;
+            min-width: 400px;
+            min-height: 400px;
+            background: #FFD700;
+            top: -10%;
+            left: -20%;
+            animation: move-blob-1 40s infinite alternate;
+        }
+
+        .blob2 {
+            width: 60vw;
+            height: 60vw;
+            min-width: 500px;
+            min-height: 500px;
+            background: #FFA000;
+            bottom: -15%;
+            right: -25%;
+            animation: move-blob-2 50s infinite alternate;
+        }
+        
+        @keyframes move-blob-1 {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30vw, 20vh) scale(1.2); }
+            100% { transform: translate(-10vw, -15vh) scale(0.9); }
+        }
+
+        @keyframes move-blob-2 {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-25vw, -20vh) scale(0.8); }
+            100% { transform: translate(15vw, 10vh) scale(1.1); }
+        }
+        
+        .glass-card {
+            background: rgba(255, 215, 0, 0.07);
+            -webkit-backdrop-filter: blur(24px);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .y2k-title {
+            font-weight: 900;
+            background: linear-gradient(135deg, #E0E0E0, #FFFFFF, #BDBDBD, #9E9E9E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shine 5s infinite linear;
+            text-shadow: 0 0 8px rgba(255,255,255,0.2);
+        }
+
+        .y2k-subtitle {
+             font-weight: 700;
+             background: linear-gradient(135deg, #FFD700, #FFFFFF, #FFC107);
+             -webkit-background-clip: text;
+             background-clip: text;
+             color: transparent;
+        }
+        
+        .hover-y2k-title:hover {
+            background: linear-gradient(135deg, #E0E0E0, #FFFFFF, #BDBDBD, #9E9E9E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        @keyframes shine {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .y2k-button {
+            background: linear-gradient(145deg, #FFC107, #FFD700);
+            border: 1px solid rgba(255, 215, 0, 0.5);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            color: #111;
+        }
+        .y2k-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+        .tier-title {
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .video-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            border-radius: 0.75rem; /* 12px */
+        }
+        .video-container::after {
+            padding-top: 56.25%;
+            display: block;
+            content: '';
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="background-container">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+    </div>
+
+    <!-- Panel de Navegación -->
+    <div id="nav-panel" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="glass-card w-11/12 max-w-md p-8 relative text-center">
+            <button id="close-nav-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <nav class="flex flex-col items-center gap-8">
+                <h3 class="text-3xl y2k-subtitle mb-4">Navegación</h3>
+                <a href="index.html" class="text-4xl font-bold text-gray-200 hover-y2k-title transition-all duration-300">Inicio</a>
+                <a href="productos.html" class="text-4xl font-bold text-gray-200 hover-y2k-title transition-all duration-300">Guía de Compra</a>
+            </nav>
+        </div>
+    </div>
+
+    <header class="fixed top-0 left-0 right-0 z-10 glass-card mx-4 mt-4">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold y2k-subtitle tracking-wider">GUÍA DE COMPRA</h1>
+            <button id="open-nav-btn" class="y2k-button font-bold py-2 px-5 rounded-full flex items-center gap-2">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+                Menú
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-32">
+        <section class="py-16 text-center">
+            <div class="container mx-auto px-6 reveal">
+                <h2 class="text-5xl md:text-7xl y2k-title">Guía de Equipo</h2>
+                <p class="text-xl md:text-2xl mt-4 max-w-3xl mx-auto y2k-subtitle">
+                    Recomendaciones para cada presupuesto y necesidad.
+                </p>
+            </div>
+        </section>
+
+        <!-- Auriculares -->
+        <section id="auriculares" class="py-16">
+            <div class="container mx-auto px-6">
+                <h3 class="text-4xl font-bold mb-12 text-center reveal y2k-subtitle">Auriculares / <span class="y2k-title">IEMs</span></h3>
+                <!-- Punto de Entrada -->
+                <div class="mb-16 reveal">
+                    <h4 class="text-2xl font-bold tier-title">Punto de Entrada</h4>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">Moondrop Chu II</h5>
+                            <p class="text-gray-300 my-2 text-sm">El rey del presupuesto. Un IEM (In-Ear Monitor) con una afinación balanceada y clara que avergüenza a audífonos mucho más caros. Ideal para empezar.</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">Koss KSC75</h5>
+                            <p class="text-gray-300 my-2 text-sm">Una leyenda económica. Estos audífonos de "clip" tienen un sonido abierto y detallado sorprendente por su precio. Extremadamente cómodos.</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">AKG K361</h5>
+                            <p class="text-gray-300 my-2 text-sm">Si prefieres un formato over-ear cerrado, estos son una opción fantástica. Sonido balanceado y bueno para aislar ruido exterior.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Entusiasta -->
+                <div class="mb-16 reveal">
+                    <h4 class="text-2xl font-bold tier-title">Entusiasta</h4>
+                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">Sennheiser HD 6XX / 650</h5>
+                            <p class="text-gray-300 my-2 text-sm">Un ícono absoluto. Famosos por su rango medio natural y sonido "aterciopelado". Ideales para vocales y géneros acústicos. Requieren amplificación.</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">HIFIMAN Sundara</h5>
+                            <p class="text-gray-300 my-2 text-sm">Una de las mejores introducciones al mundo planar-magnético. Ofrecen un bajo rápido, detallado y unos agudos muy extendidos. Sonido muy técnico.</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">Moondrop Blessing 3</h5>
+                            <p class="text-gray-300 my-2 text-sm">Un IEM híbrido que compite con modelos que doblan su precio. Resolución y detalle de primer nivel en un paquete compacto. Referencia en su rango.</p>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Premium -->
+                <div class="reveal">
+                    <h4 class="text-2xl font-bold tier-title">Premium / "Endgame"</h4>
+                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">Focal Utopia</h5>
+                            <p class="text-gray-300 my-2 text-sm">Considerado por muchos el mejor audífono dinámico del mundo. Impacto, dinámica y claridad sin igual. El pináculo de la ingeniería de Focal.</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">Meze Audio Empyrean II</h5>
+                            <p class="text-gray-300 my-2 text-sm">Combina un diseño artístico con un sonido relajado, envolvente y muy detallado. Lujosos y extremadamente cómodos para largas sesiones.</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">UERR (Ultimate Ears Reference Remastered)</h5>
+                            <p class="text-gray-300 my-2 text-sm">Cuando buscas la máxima fidelidad y aislamiento, los IEMs custom son la respuesta. El UERR es un monitor de referencia, hecho a la medida de tu oído.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DACs/Amps -->
+        <section id="dacs" class="py-16 bg-black/20">
+            <div class="container mx-auto px-6">
+                <h3 class="text-4xl font-bold mb-12 text-center reveal y2k-subtitle">DACs & <span class="y2k-title">Amplificadores</span></h3>
+                 <div class="mb-16 reveal">
+                    <h4 class="text-2xl font-bold tier-title">Punto de Entrada</h4>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">Apple Dongle DAC</h5>
+                            <p class="text-gray-300 my-2 text-sm">Increíblemente bueno por su precio. Este pequeño adaptador mide excelentemente y provee un sonido limpio. La mejor compra por menos de $200 MXN.</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">FiiO KA13</h5>
+                            <p class="text-gray-300 my-2 text-sm">Un DAC/Amp portátil tipo "dongle" muy potente y versátil. Puede mover la mayoría de audífonos con facilidad y ofrece un sonido limpio y dinámico.</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">iFi Uno</h5>
+                            <p class="text-gray-300 my-2 text-sm">Un pequeño DAC/Amp de escritorio ideal para empezar. Tiene diferentes modos de EQ y suficiente potencia para audífonos de entrada.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="reveal">
+                    <h4 class="text-2xl font-bold tier-title">Entusiasta & Premium</h4>
+                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">Topping DX3 Pro+</h5>
+                            <p class="text-gray-300 my-2 text-sm">Un todo-en-uno de escritorio que es referencia en mediciones. Sonido transparente, muchísima potencia y conectividad Bluetooth.</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">iFi Zen DAC V2</h5>
+                            <p class="text-gray-300 my-2 text-sm">Famoso por su sonido un poco más cálido y su botón "TrueBass" que añade un grave análogo muy agradable. Excelente construcción.</p>
+                        </div>
+                         <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">Chord Mojo 2</h5>
+                            <p class="text-gray-300 my-2 text-sm">Un DAC/Amp portátil de alta gama. Conocido por su tecnología de conversión única y un DSP ultrapotente para ecualizar el sonido a tu gusto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Altavoces -->
+        <section id="altavoces" class="py-16">
+             <div class="container mx-auto px-6">
+                <h3 class="text-4xl font-bold mb-12 text-center reveal y2k-subtitle">Altavoces / <span class="y2k-title">Monitores</span></h3>
+                 <div class="mb-16 reveal">
+                    <h4 class="text-2xl font-bold tier-title">Punto de Entrada</h4>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">Edifier R1280T</h5>
+                            <p class="text-gray-300 my-2 text-sm">Un clásico de los altavoces activos de presupuesto. Sonido agradable, control remoto y dos entradas. Imbatibles por su precio.</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">PreSonus Eris 3.5</h5>
+                            <p class="text-gray-300 my-2 text-sm">Pequeños monitores de campo cercano con un sonido sorprendentemente plano y detallado, ideal para escritorio y creación de contenido.</p>
+                        </div>
+                         <div class="glass-card p-6 opacity-0 pointer-events-none md:hidden lg:block"><!-- Placeholder --></div>
+                    </div>
+                </div>
+                 <div class="reveal">
+                    <h4 class="text-2xl font-bold tier-title">Entusiasta & Premium</h4>
+                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">Kali Audio LP-6 V2</h5>
+                            <p class="text-gray-300 my-2 text-sm">Monitores de estudio profesionales a un precio rompedor. Ofrecen un sonido increíblemente preciso y una imagen estéreo de primer nivel.</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">KEF LS50 Meta</h5>
+                            <p class="text-gray-300 my-2 text-sm">Unos de los altavoces de estantería más aclamados. Su tecnología de driver Uni-Q crea un sonido puntual, coherente y muy holográfico.</p>
+                        </div>
+                         <div class="glass-card p-6">
+                            <h5 class="text-xl font-bold">Buchardt Audio S400 MKII</h5>
+                            <p class="text-gray-300 my-2 text-sm">Diseño danés con un sonido enorme para su tamaño. El waveguide profundo y el radiador pasivo trasero crean un soundstage masivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Videos -->
+        <section id="videos" class="py-20 md:py-32 bg-black/20">
+            <div class="container mx-auto px-6">
+                <h3 class="text-4xl font-bold mb-16 text-center reveal y2k-subtitle">Recursos en <span class="y2k-title">Video</span></h3>
+                <div class="grid lg:grid-cols-3 gap-12">
+                    
+                    <div class="reveal glass-card p-6">
+                        
+                        <h5 class="text-xl font-bold">Suprapixel</h5>
+                        <p class="text-gray-300 mt-2 text-sm">Análisis técnico y detallado, un buen ejemplo de reseña de audio en español.</p>
+                        
+                                              
+                        &#8203;
+                        &#8203;
+                        
+                        <div class="video-container mb-4">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/XA-oAIClw6I?si=F1GMaHrMh9zYI-j6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        
+                                                &#8203;
+                        &#8203;
+                        
+                        
+                        <div class="video-container mb-4">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/JPq4G6vz5a0?si=uNiNuZMF9fgjGRDI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        
+                    </div>
+
+                    <div class="reveal glass-card p-6" style="transition-delay: 150ms;">
+                           
+                        <h5 class="text-xl font-bold">Jaime Altozano</h5>
+                        <p class="text-gray-300 mt-2 text-sm">Un video fundamental para entender las complejidades de la percepción del audio y por qué a veces es difícil notar las diferencias.</p>
+                        
+                        &#8203;
+                        &#8203;
+                        
+                        <div class="video-container mb-4">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/w192BHvVri4?si=9K3Lp2HZm0THtgk6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            
+                             &#8203;
+                        &#8203;
+                        
+                       <div class="video-container mb-4">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/cAYvGePlM-c?si=vSFTfZQ4fxYKpMmc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            
+                    </div>
+                    
+                    <div class="reveal glass-card p-6" style="transition-delay: 150ms;">
+                     <!--<div class="video-container mb-4">
+                            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/cAYvGePlM-c?si=vSFTfZQ4fxYKpMmc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                             <!-- como chingados funciona esto? -->
+                         
+                         <div class="video-container mb-4">                         
+                          <!-- iframe de YouTube -->  
+                       
+                        
+                        <h5 class="text-xl font-bold">Jaime Altozano</h5>
+                        <p class="text-gray-300 mt-2 text-sm"><!-- texto xdxdxd--></p>
+                                    </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-12 border-t border-white/10">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            
+          
+            <p>&copy; 2024 Hi-Res Audio Zone. La música, como debe ser escuchada.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        // Lógica para animaciones de scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Lógica del panel de navegación
+        const openNavBtn = document.getElementById('open-nav-btn');
+        const closeNavBtn = document.getElementById('close-nav-btn');
+        const navPanel = document.getElementById('nav-panel');
+
+        openNavBtn.addEventListener('click', () => {
+            navPanel.classList.remove('hidden');
+            setTimeout(() => {
+                navPanel.classList.remove('opacity-0');
+            }, 10);
+        });
+
+        function closeNav() {
+            navPanel.classList.add('opacity-0');
+            setTimeout(() => {
+                navPanel.classList.add('hidden');
+            }, 300); // Coincide con la duración de la transición
+        }
+
+        closeNavBtn.addEventListener('click', closeNav);
+        navPanel.addEventListener('click', (e) => {
+            if (e.target === navPanel) {
+                closeNav();
+            }
+        });
+    </script>
+</body>
+</html>
+
+

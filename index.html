@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitress web V.1</title>
+    <title>Audio de Alta Fidelidad - La Experiencia Sonora Definitiva</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -40,7 +40,7 @@
             position: absolute;
             border-radius: 50%;
             opacity: 0.1;
-            filter: blur(120px); /* Aumentamos el blur para un efecto más difuso y suave */
+            filter: blur(120px);
         }
 
         .blob1 {
@@ -65,7 +65,6 @@
             animation: move-blob-2 50s infinite alternate;
         }
         
-        /* Animaciones de fondo más complejas y fluidas */
         @keyframes move-blob-1 {
             0% { transform: translate(0, 0) scale(1); }
             50% { transform: translate(30vw, 20vh) scale(1.2); }
@@ -78,17 +77,15 @@
             100% { transform: translate(15vw, 10vh) scale(1.1); }
         }
         
-        /* Estilo Glassmorfismo Exagerado */
         .glass-card {
-            background: rgba(255, 215, 0, 0.07); /* Tinte dorado muy sutil */
-            -webkit-backdrop-filter: blur(24px); /* Blur intenso */
+            background: rgba(255, 215, 0, 0.07);
+            -webkit-backdrop-filter: blur(24px);
             backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 215, 0, 0.25); /* Borde dorado más visible */
+            border: 1px solid rgba(255, 215, 0, 0.25);
             border-radius: 1.5rem;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); /* Sombra pronunciada */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
         }
 
-        /* Estilo Y2K para títulos con nueva paleta */
         .y2k-title {
             font-weight: 900;
             background: linear-gradient(135deg, #E0E0E0, #FFFFFF, #BDBDBD, #9E9E9E);
@@ -106,13 +103,20 @@
              background-clip: text;
              color: transparent;
         }
+        
+        /* Efecto de hover para enlaces de navegación del panel */
+        .hover-y2k-title:hover {
+            background: linear-gradient(135deg, #E0E0E0, #FFFFFF, #BDBDBD, #9E9E9E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
 
         @keyframes shine {
             0% { background-position: -200% center; }
             100% { background-position: 200% center; }
         }
         
-        /* Animaciones de scroll */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -124,29 +128,27 @@
             transform: translateY(0);
         }
 
-        /* Estilo para los botones con nueva paleta */
         .y2k-button {
             background: linear-gradient(145deg, #FFC107, #FFD700);
             border: 1px solid rgba(255, 215, 0, 0.5);
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-            color: #111; /* Texto oscuro para mejor contraste */
+            color: #111;
         }
         .y2k-button:hover {
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
         }
         
-        /* Estilos para logos de streaming corregidos */
         .streaming-logo {
             width: 48px;
             height: 48px;
-            object-fit: contain; /* Asegura que el logo no se deforme */
-            filter: brightness(0) invert(1) opacity(0.7); /* Los hace blancos y semi-transparentes */
+            object-fit: contain;
+            filter: brightness(0) invert(1) opacity(0.7);
             transition: all 0.3s ease;
         }
         .streaming-card:hover .streaming-logo {
-            filter: brightness(1) invert(0) opacity(1); /* Muestra el color original al pasar el mouse */
+            filter: brightness(1) invert(0) opacity(1);
         }
     </style>
 </head>
@@ -157,19 +159,27 @@
         <div class="blob blob2"></div>
     </div>
 
+    <!-- Panel de Navegación -->
+    <div id="nav-panel" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="glass-card w-11/12 max-w-md p-8 relative text-center">
+            <button id="close-nav-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <nav class="flex flex-col items-center gap-8">
+                <h3 class="text-3xl y2k-subtitle mb-4">Navegación</h3>
+                <a href="index.html" class="text-4xl font-bold text-gray-200 hover-y2k-title transition-all duration-300">Inicio</a>
+                <a href="productos.html" class="text-4xl font-bold text-gray-200 hover-y2k-title transition-all duration-300">Guía de Compra</a>
+            </nav>
+        </div>
+    </div>
+
     <header class="fixed top-0 left-0 right-0 z-10 glass-card mx-4 mt-4">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <h1 class="text-xl font-bold y2k-subtitle tracking-wider">BITRESS</h1>
-            <nav class="hidden md:flex space-x-6 items-center">
-                <a href="#que-es" class="hover:text-yellow-300 transition-colors">¿Qué es?</a>
-                <a href="#plataformas" class="hover:text-yellow-300 transition-colors">Streaming</a>
-                <a href="#formatos" class="hover:text-yellow-300 transition-colors">Formatos</a>
-                <a href="#componentes" class="hover:text-yellow-300 transition-colors">Componentes</a>
-                <a href="#experiencia" class="hover:text-yellow-300 transition-colors">Experiencia</a>
-            </nav>
-            <a href="#empezar" class="y2k-button font-bold py-2 px-5 rounded-full">
-                Empezar
-            </a>
+            <h1 class="text-xl font-bold y2k-subtitle tracking-wider">HI-RES AUDIO</h1>
+            <button id="open-nav-btn" class="y2k-button font-bold py-2 px-5 rounded-full flex items-center gap-2">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+                Menú
+            </button>
         </div>
     </header>
 
@@ -201,7 +211,7 @@
                             Hi-Res Audio (Audio de Alta Resolución) va un paso más allá del Hi-Fi tradicional. Se refiere a audio sin pérdida que es capaz de reproducir todo el espectro de sonido de grabaciones que han sido masterizadas a partir de fuentes de mejor calidad que un CD.
                         </p>
                         <p class="text-lg text-gray-300 leading-relaxed">
-                            En esencia, es la búsqueda de la perfección sónica: capturar y reproducir cada vibración, cada matiz y cada emoción con una claridad y profundidad que te transportan directamente al estudio de grabación o a la sala de conciertos.
+                            En esencia, es la búsqueda de la perfección sónica: capturar y reproducir cada vibración, cada matiz y cada emoción con una claridad y profundidad que te transportan directamente al estudio de grabación.
                         </p>
                     </div>
                     <div class="lg:w-1/2 flex justify-center items-center">
@@ -267,32 +277,63 @@
                     <div class="reveal glass-card p-6 text-center">
                         <i data-lucide="file-audio" class="w-10 h-10 mx-auto mb-4 text-yellow-300"></i>
                         <h4 class="text-2xl font-bold mb-2">FLAC</h4>
-                        <p class="text-gray-300 text-sm">El estándar de facto para el audio sin pérdida. De código abierto y ampliamente compatible, reduce el tamaño del archivo a la mitad sin perder un solo bit de información.</p>
+                        <p class="text-gray-300 text-sm">El estándar para el audio sin pérdida. De código abierto y compatible, reduce el tamaño del archivo sin perder un solo bit de información.</p>
                     </div>
                     <div class="reveal glass-card p-6 text-center" style="transition-delay: 150ms;">
                         <i data-lucide="apple" class="w-10 h-10 mx-auto mb-4 text-yellow-300"></i>
                         <h4 class="text-2xl font-bold mb-2">ALAC</h4>
-                        <p class="text-gray-300 text-sm">La alternativa de Apple a FLAC. Ofrece la misma calidad sin pérdida y es el formato nativo para los dispositivos de Apple, asegurando una compatibilidad perfecta en su ecosistema.</p>
+                        <p class="text-gray-300 text-sm">La alternativa de Apple a FLAC. Ofrece la misma calidad sin pérdida y es nativo para los dispositivos de Apple, asegurando compatibilidad.</p>
                     </div>
                     <div class="reveal glass-card p-6 text-center" style="transition-delay: 300ms;">
                         <i data-lucide="disc-album" class="w-10 h-10 mx-auto mb-4 text-yellow-300"></i>
                         <h4 class="text-2xl font-bold mb-2">DSD</h4>
-                        <p class="text-gray-300 text-sm">El formato de los Super Audio CD (SACD). Utiliza un método de codificación diferente (modulación de densidad de pulso) que muchos audiófilos consideran más "analógico" y natural.</p>
+                        <p class="text-gray-300 text-sm">El formato de los Super Audio CD (SACD). Utiliza un método de codificación que muchos audiófilos consideran más "analógico" y natural.</p>
                     </div>
                     <div class="reveal glass-card p-6 text-center" style="transition-delay: 450ms;">
                         <i data-lucide="verified" class="w-10 h-10 mx-auto mb-4 text-yellow-300"></i>
                         <h4 class="text-2xl font-bold mb-2">MQA</h4>
-                        <p class="text-gray-300 text-sm">Una tecnología que "pliega" un archivo de ultra alta resolución en uno más pequeño para facilitar el streaming, prometiendo autenticar la calidad del master de estudio original. Usado por Tidal.</p>
+                        <p class="text-gray-300 text-sm">Tecnología que "pliega" un archivo de ultra alta resolución en uno más pequeño para streaming, autenticando la calidad del master de estudio.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="componentes" class="py-20 md:py-32">
+        <section id="mitos" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h3 class="text-4xl md:text-5xl font-bold mb-4 y2k-subtitle">Hi-Fi para Principiantes: <span class="y2k-title">Mitos y Realidades</span></h3>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto">Desmitificando el mundo del audio de alta fidelidad.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="reveal glass-card p-8">
+                        <h4 class="text-2xl font-bold mb-4 flex items-center gap-4"><i data-lucide="x-circle" class="w-8 h-8 text-red-400"></i>MITO</h4>
+                        <p class="text-lg font-bold mb-2">"Necesitas gastar una fortuna para tener buen sonido."</p>
+                        <p class="text-gray-300">Hoy en día, el mercado "Chi-Fi" (Hi-Fi Chino) y marcas consolidadas ofrecen productos de entrada con una calidad sonora increíble por una fracción del costo de antes. Un buen par de IEMs y un DAC portátil pueden transformar tu experiencia por menos de lo que cuesta un smartphone.</p>
+                    </div>
+                    <div class="reveal glass-card p-8" style="transition-delay: 150ms;">
+                        <h4 class="text-2xl font-bold mb-4 flex items-center gap-4"><i data-lucide="check-circle-2" class="w-8 h-8 text-green-400"></i>REALIDAD</h4>
+                        <p class="text-lg font-bold mb-2">"La fuente y los transductores son lo más importante."</p>
+                        <p class="text-gray-300">La calidad de tu música (ej. Tidal vs Spotify) y de tus audífonos/altavoces son los componentes que generan el mayor impacto audible. Es mejor invertir en estos dos elementos antes que en cables exóticos o accesorios costosos.</p>
+                    </div>
+                    <div class="reveal glass-card p-8">
+                        <h4 class="text-2xl font-bold mb-4 flex items-center gap-4"><i data-lucide="x-circle" class="w-8 h-8 text-red-400"></i>MITO</h4>
+                        <p class="text-lg font-bold mb-2">"Los cables caros mejoran drásticamente el sonido."</p>
+                        <p class="text-gray-300">Para la mayoría de los sistemas, un cable bien construido y de material decente es todo lo que se necesita. Las diferencias audibles, si existen, son mínimas y a menudo sujetas a placebo. No es un área en la que un principiante deba invertir mucho dinero.</p>
+                    </div>
+                     <div class="reveal glass-card p-8" style="transition-delay: 150ms;">
+                        <h4 class="text-2xl font-bold mb-4 flex items-center gap-4"><i data-lucide="check-circle-2" class="w-8 h-8 text-green-400"></i>REALIDAD</h4>
+                        <p class="text-lg font-bold mb-2">"Probar el equipo es fundamental."</p>
+                        <p class="text-gray-300">El audio es subjetivo. Lo que a una persona le suena increíble, a otra puede no gustarle. Siempre que sea posible, intenta escuchar unos audífonos o altavoces antes de comprarlos. Leer y ver reseñas ayuda a acotar las opciones.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="componentes" class="py-20 md:py-32 bg-black/20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 reveal">
                     <h3 class="text-4xl md:text-5xl font-bold mb-4 y2k-subtitle">Los <span class="y2k-title">Pilares</span> del Hi-Fi</h3>
-                    <p class="text-lg text-gray-300 max-w-2xl mx-auto">La cadena de audio es tan fuerte como su eslabón más débil. Cada componente es crucial.</p>
+                    <p class="text-lg text-gray-300 max-w-2xl mx-auto">La cadena de audio es tan fuerte como su eslabón más débil.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="reveal glass-card p-8 text-center transform hover:scale-105 transition-transform duration-300">
@@ -300,24 +341,24 @@
                             <i data-lucide="disc-3" class="w-10 h-10 text-yellow-300"></i>
                         </div>
                         <h4 class="text-2xl font-bold mb-3">1. La Fuente / DAC</h4>
-                        <p class="text-gray-300">El origen de la música. Un buen DAC (Convertidor Digital a Analógico) es vital para transformar los datos digitales en una señal de audio limpia y precisa.</p>
+                        <p class="text-gray-300">El origen de la música. Un buen DAC es vital para transformar los datos digitales en una señal de audio limpia y precisa.</p>
                     </div>
                     <div class="reveal glass-card p-8 text-center transform hover:scale-105 transition-transform duration-300" style="transition-delay: 150ms;">
                         <div class="inline-block p-5 bg-yellow-900/50 rounded-full mb-6">
                             <i data-lucide="audio-lines" class="w-10 h-10 text-yellow-300"></i>
                         </div>
                         <h4 class="text-2xl font-bold mb-3">2. El Amplificador</h4>
-                        <p class="text-gray-300">El motor del sistema. Proporciona la potencia y el control necesarios para que los transductores se muevan con precisión, sin añadir distorsión.</p>
+                        <p class="text-gray-300">El motor del sistema. Proporciona la potencia y el control necesarios para que los transductores se muevan con precisión.</p>
                     </div>
                     <div class="reveal glass-card p-8 text-center transform hover:scale-105 transition-transform duration-300" style="transition-delay: 300ms;">
                         <div class="inline-block p-5 bg-yellow-900/50 rounded-full mb-6">
                             <i data-lucide="headphones" class="w-10 h-10 text-yellow-300"></i>
                         </div>
                         <h4 class="text-2xl font-bold mb-3">3. Los Transductores</h4>
-                        <p class="text-gray-300">La voz del sistema. Ya sean auriculares o altavoces, su calidad para convertir la señal eléctrica en sonido es, posiblemente, el factor más decisivo.</p>
+                        <p class="text-gray-300">La voz del sistema. Ya sean auriculares o altavoces, su calidad para convertir la señal eléctrica en sonido es el factor más decisivo.</p>
                     </div>
                 </div>
-                <div class="reveal mt-12">
+                 <div class="reveal mt-12">
                      <div class="glass-card p-8 flex flex-col md:flex-row items-center gap-8">
                          <div class="p-5 bg-yellow-900/50 rounded-full">
                             <i data-lucide="sofa" class="w-12 h-12 text-yellow-300"></i>
@@ -367,10 +408,10 @@
                 <div class="reveal glass-card py-16 px-8">
                      <h3 class="text-4xl md:text-5xl font-bold mb-4 y2k-title">¿Listo para Escuchar?</h3>
                      <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
-                        Tu viaje hacia el sonido perfecto comienza con un solo paso. No necesitas gastar una fortuna para notar una gran diferencia.
+                        Tu viaje hacia el sonido perfecto comienza aquí. Explora nuestra guía de equipo recomendado para todos los presupuestos.
                      </p>
-                     <a href="#" class="y2k-button font-bold py-4 px-10 rounded-full text-lg">
-                         Construye tu primer sistema
+                     <a href="productos.html" class="y2k-button font-bold py-4 px-10 rounded-full text-lg">
+                         Ir a la Guía de Compra
                      </a>
                 </div>
             </div>
@@ -379,29 +420,50 @@
 
     <footer class="py-12 border-t border-white/10">
         <div class="container mx-auto px-6 text-center text-gray-400">
-            <p>&copy; Bitress Hi-Res Audio Zone. La música, como debe ser escuchada.</p>
+            <p>&copy; 2024 Hi-Res Audio Zone. La música, como debe ser escuchada.</p>
         </div>
     </footer>
 
     <script>
-        // Inicializar Lucide Icons
         lucide.createIcons();
-
-        // Lógica para animaciones al hacer scroll
+        
+        // Lógica para animaciones de scroll
         const revealElements = document.querySelectorAll('.reveal');
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 }
             });
-        }, {
-            threshold: 0.1
-        });
-
+        }, { threshold: 0.1 });
         revealElements.forEach(element => {
             observer.observe(element);
+        });
+
+        // Lógica del panel de navegación
+        const openNavBtn = document.getElementById('open-nav-btn');
+        const closeNavBtn = document.getElementById('close-nav-btn');
+        const navPanel = document.getElementById('nav-panel');
+
+        openNavBtn.addEventListener('click', () => {
+            navPanel.classList.remove('hidden');
+            setTimeout(() => {
+                navPanel.classList.remove('opacity-0');
+            }, 10);
+        });
+
+        function closeNav() {
+            navPanel.classList.add('opacity-0');
+            setTimeout(() => {
+                navPanel.classList.add('hidden');
+            }, 300); // Coincide con la duración de la transición
+        }
+
+        closeNavBtn.addEventListener('click', closeNav);
+        navPanel.addEventListener('click', (e) => {
+            if (e.target === navPanel) {
+                closeNav();
+            }
         });
     </script>
 </body>
